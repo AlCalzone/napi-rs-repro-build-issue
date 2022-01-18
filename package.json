@@ -53,7 +53,10 @@
     "lint": "eslint . -c ./.eslintrc.yml",
     "prepublishOnly": "napi prepublish -t npm",
     "test": "ava",
-    "version": "napi version"
+    "version": "napi version",
+    "runtest": "node simple-test",
+    "repro_ok": "rm -rf target index.* && yarn build && yarn runtest",
+    "repro_nok": "yarn build && yarn build && yarn runtest"
   },
   "devDependencies": {
     "@napi-rs/cli": "^2.0.0",
